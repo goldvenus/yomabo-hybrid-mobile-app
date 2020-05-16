@@ -1,13 +1,12 @@
 /* eslint-disable react/prop-types */
 import { connect } from 'react-redux';
-import { createAppContainer, createBottomTabNavigator } from 'react-navigation';
+import { createAppContainer } from 'react-navigation';
 import {
   reduxifyNavigator,
   createReactNavigationReduxMiddleware,
 } from 'react-navigation-redux-helpers';
+import { createMaterialBottomTabNavigator } from 'react-navigation-material-bottom-tabs';  
 import { Image } from 'react-native';
-import { widthPercentageToDP as wp }
-  from 'react-native-responsive-screen';
 import HomeNavigator from './HomeNavigator';
 import Page2Navigator from './Page2Navigator';
 import Page3Navigator from './Page3Navigator';
@@ -15,96 +14,67 @@ import Page4Navigator from './Page4Navigator';
 import React from 'react';
 
 
-const SwitchNavigator = createBottomTabNavigator(
+const SwitchNavigator = createMaterialBottomTabNavigator(
   {
-    Home: { screen: HomeNavigator },
-    Page2: { screen: Page2Navigator },
-    Page3: { screen: Page3Navigator },
-    Page4: { screen: Page4Navigator },
+    Home: {
+      screen: HomeNavigator,
+      navigationOption: {
+        tabBarIcon: ({tintColor}) => (tintColor === "#ff0000" ?
+          <Image source={require('../../assets/images/bottom_nav_bar/wavescore.png')} resizeMode="contain"
+                 style={{width: 20, height: 20, tintColor: tintColor}}/>
+          :
+          <Image source={require('../../assets/images/bottom_nav_bar/wavescore.png')} resizeMode="contain"
+                 style={{width: 20, height: 20, tintColor: tintColor}}/>
+        ),
+      }
+    },
+    Page2: {
+      screen: Page2Navigator,
+      navigationOption: {
+        tabBarIcon: ({tintColor}) => (tintColor === "#ff0000" ?
+          <Image source={require('../../assets/images/bottom_nav_bar/wavescore.png')} resizeMode="contain"
+                 style={{width: 20, height: 20, tintColor: tintColor}}/>
+          :
+          <Image source={require('../../assets/images/bottom_nav_bar/wavescore.png')} resizeMode="contain"
+                 style={{width: 20, height: 20, tintColor: tintColor}}/>
+        ),
+      }
+    },
+    Page3: {
+      screen: Page3Navigator,
+      navigationOption: {
+        tabBarIcon: ({tintColor}) => (tintColor === "#ff0000" ?
+          <Image source={require('../../assets/images/bottom_nav_bar/wavescore.png')} resizeMode="contain"
+                 style={{width: 20, height: 20, tintColor: tintColor}}/>
+          :
+          <Image source={require('../../assets/images/bottom_nav_bar/wavescore.png')} resizeMode="contain"
+                 style={{width: 20, height: 20, tintColor: tintColor}}/>
+        ),
+      }
+    },
+    Page4: {
+      screen: Page4Navigator,
+      navigationOption: {
+        tabBarIcon: ({tintColor}) => (tintColor === "#ff0000" ?
+          <Image source={require('../../assets/images/bottom_nav_bar/wavescore.png')} resizeMode="contain"
+                 style={{width: 20, height: 20, tintColor: tintColor}}/>
+          :
+          <Image source={require('../../assets/images/bottom_nav_bar/wavescore.png')} resizeMode="contain"
+                 style={{width: 20, height: 20, tintColor: tintColor}}/>
+        ),
+      }
+    }
   },
   {
-    defaultNavigationOptions: ({ navigation }) => ({
-      // eslint-disable-next-line no-unused-vars
-      tabBarIcon: ({ focused, horizontal, tintColor }) => {
-        const { routeName } = navigation.state;
-        switch (routeName) {
-          case 'Home':
-            return (
-              <Image
-                source={require('../../assets/images/bottom_nav_bar/wavescore.png')}
-                style={{
-                  width: wp('6'), height: wp('6'), marginTop: wp('10'), marginBottom: wp('10'),
-                }}
-              />
-            );
-          case 'Game':
-            return (
-              !focused ? (
-                <Image
-                  source={require('../../assets/images/bottom_nav_bar/game-normal.png')}
-                  style={{
-                    width: wp('6'), height: wp('6'), marginTop: wp('10'), marginBottom: wp('10'),
-                  }}
-              />
-              )
-                : (
-                  <Image
-                    source={require('../../assets/images/bottom_nav_bar/game-active.png')}
-                    style={{
-                      width: wp('10'), height: wp('10'), marginTop: wp('10'), marginBottom: wp('10'),
-                    }}
-                />
-                )
-            );
-          case 'Page2':
-            return (
-              <Image
-                source={require('../../assets/images/bottom_nav_bar/stats.png')}
-                style={{
-                  width: wp('6'), height: wp('6'), marginTop: wp('10'), marginBottom: wp('10'),
-                }}
-              />
-            );
-          case 'Page3':
-            return (
-              <Image
-                source={require('../../assets/images/bottom_nav_bar/chat.png')}
-                style={{
-                  width: wp('6'), height: wp('6'), marginTop: wp('10'), marginBottom: wp('10'),
-                }}
-              />
-            );
-          case 'Page4':
-            return (
-              <Image
-                source={require('../../assets/images/bottom_nav_bar/menu.png')}
-                style={{
-                  width: wp('6'), height: wp('6'), marginTop: wp('10'), marginBottom: wp('10'),
-                }}
-              />
-            );
-          default:
-            return (
-              <Image
-                source={require('../../assets/images/bottom_nav_bar/wavescore.png')}
-                style={{
-                  width: wp('6'), height: wp('6'), marginTop: wp('10'), marginBottom: wp('10'),
-                }}
-              />
-            );
-        }
-      },
-    }),
-    initialRouteName: 'Home',
-    tabBarOptions: {
-      activeBackgroundColor: '#111111',
-      inactiveBackgroundColor: '#111111',
-      showLabel: false,
-    },
-    style: {
-      backgroundColor: '#111111',
-      paddingTop: 15,
-      paddingBottom: 15,
+    initialRouteName: "Home",
+    activeColor: "#ff0000",
+    barStyle: {
+        backgroundColor: "#ff0000",
+        borderTopLeftRadius: 30,
+        borderTopRightRadius: 30,
+        borderBottomStartRadius: 30,
+        borderBottomEndRadius: 30,
+        overflow: 'hidden'
     },
   },
 );
