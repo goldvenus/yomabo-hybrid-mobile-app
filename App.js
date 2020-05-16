@@ -8,7 +8,7 @@ import * as Font from 'expo-font';
 import { Asset } from 'expo-asset';
 import AppLoading from 'expo/build/launch/AppLoading';
 
-import AppMocData from './src/share/data/MocData';
+import AppMocData from './src/share/MocData';
 import store from './src/redux/store';
 import { AppNavigator } from './src/navigators/AppNavigator';
 

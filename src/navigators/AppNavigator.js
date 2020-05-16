@@ -95,7 +95,7 @@ const SwitchNavigator = createBottomTabNavigator(
         }
       },
     }),
-    initialRouteName: 'Game',
+    initialRouteName: 'Home',
     tabBarOptions: {
       activeBackgroundColor: '#111111',
       inactiveBackgroundColor: '#111111',
