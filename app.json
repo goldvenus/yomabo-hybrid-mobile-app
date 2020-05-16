@@ -1,0 +1,39 @@
+{
+  "expo": {
+    "name": "yomabo 1.0",
+    "description": "My Project",
+    "slug": "snack-0a079f9f-5636-4aad-afd4-2daa5a29a9b3",
+    "privacy": "unlisted",
+    "sdkVersion": "36.0.0",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "primaryColor": "#cccccc",
+    "icon": "https://d1wp6m56sqw74a.cloudfront.net/~assets/c9aa1be8a6a6fe81e20c3ac4106a2ebc",
+    "loading": {
+      "icon": "https://d1wp6m56sqw74a.cloudfront.net/~assets/c9aa1be8a6a6fe81e20c3ac4106a2ebc",
+      "hideExponentText": false
+    },
+    "splash": {
+      "image": "./assets/images/splash.png",
+      "resizeMode": "cover"
+    },
+    "packagerOpts": {
+      "assetExts": [
+        "ttf",
+        "mp3",
+        "otf",
+        "xml"
+      ]
+    },
+    "ios": {
+      "supportsTablet": true
+    },
+    "android": {
+      "package": "com.yomabo.game"
+    },
+    "platforms": [
+      "android",
+      "ios"
+    ]
+  }
+}
