@@ -14,9 +14,8 @@ const styles = StyleSheet.create({
     width: normalizeSize(186),
     height: normalizeSize(253),
     backgroundColor: 'white',
-    padding: paddingSize.screen,
-    paddingBottom: 0,
     flexDirection: 'column',
+    justifyContent: 'space-between',
     borderRadius: borderRadius.large,
     marginRight: paddingSize.dashCard,
     shadowOffset: {

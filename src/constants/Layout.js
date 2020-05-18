@@ -49,5 +49,6 @@ export const fontSize = {
 export const paddingSize = {
   screen: normalizeSize(30),
   dashCard: 16,
+  dashCardPadding: 20,
   screenTop: normalizeSize(55)
 };
