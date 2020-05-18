@@ -34,7 +34,7 @@ export const fontSize = {
   xsmall: 12,
   small: 14,
   smedium: 16,
-  medium: normalizeSize(22),
+  medium: normalizeSize(24),
   large: normalizeSize(30),
   xlarge: normalizeSize(52),
   xxlarge: normalizeSize(84),

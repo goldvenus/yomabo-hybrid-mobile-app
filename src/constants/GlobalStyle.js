@@ -1,7 +1,7 @@
 import { StyleSheet } from 'react-native';
 import { fontSize } from './Layout';
 import GlobalColor from './Colors';
-
+// import FontStyle from './Font';
 // const clearButton = {
 //   backgroundColor: '#00000000',
 //   elevation: 0,
@@ -18,6 +18,15 @@ export default StyleSheet.create({
   description: {
     color: GlobalColor.titleDescription,
     opacity: 0.3
+  },
+  H1: {
+    fontSize: fontSize.medium,
+    color: GlobalColor.primaryTextColor
+  },
+  H4: {
+    color: GlobalColor.titleDescription,
+    opacity: 0.3,
+    fontSize: fontSize.xsmall
   }
 });
 

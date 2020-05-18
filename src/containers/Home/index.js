@@ -6,6 +6,7 @@ import { Icon } from '@components/Icon';
 import GlobalStyle from '@constants/GlobalStyle';
 import { paddingSize } from '@constants/Layout';
 import AppMocData from '@share/MocData';
+import GlobalColors from '@constants/Colors';
 
 function Home() {
   return (
@@ -13,8 +14,22 @@ function Home() {
       <Header />
       <ScrollView horizontal>
         <View style={styles.cardViews}>
-          <CardView />
-          <CardView />
+          <CardView>
+            <Text style={GlobalStyle.H1}>
+              Our Mission
+            </Text>
+            <Text style={[GlobalStyle.H4, { paddingTop: 10 }]}>
+              Money in the bank and no paper in a pocket
+            </Text>
+          </CardView>
+          <CardView style={{ backgroundColor: GlobalColors.primaryColor }}>
+            <Text style={[GlobalStyle.H1, { color: 'white' }]}>
+              Our Mission
+            </Text>
+            <Text style={[GlobalStyle.H4, { paddingTop: 10, color: 'white' }]}>
+              Money in the bank and no paper in a pocket
+            </Text>
+          </CardView>
           <CardView />
           <CardView />
         </View>
