@@ -11,7 +11,8 @@ const GlobalColors = {
   titleColor: '#2F2F39',
   forgroundColor: '#F5F5F5',
   inactiveTextColor: '#C3C3C3',
-  titleDescription: '#2F2F39'
+  titleDescription: '#2F2F39',
+  lineColor: '#707070'
 };
 
 export default GlobalColors;

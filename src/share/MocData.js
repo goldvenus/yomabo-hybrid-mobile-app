@@ -14,9 +14,12 @@ const AppMocData = {
   Icons: {
     search: require('@assets/images/icons/ic_search.png'),
     notification: require('@assets/images/icons/ic_notification.png'),
+    checkCircle: require('@assets/images/icons/ic_checkcircle.png'),
   },
   dashBoard: {
     card1: require('@assets/images/dashBoard/card1.png'),
+    card2: require('@assets/images/dashBoard/card2.png'),
+    card3: require('@assets/images/dashBoard/card3.png'),
     folder: require('@assets/images/dashBoard/ic_folder.png')
   }
 };

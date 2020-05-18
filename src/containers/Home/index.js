@@ -12,52 +12,10 @@ function Home() {
   return (
     <View style={GlobalStyle.screenContainer}>
       <Header />
-      <ScrollView horizontal>
-        <View style={styles.cardViews}>
-          <CardView>
-            <View style={styles.cardTextWrap}>
-              <Image
-                source={AppMocData.dashBoard.folder}
-                style={{ width: 54, height: 42, opacity: 0.3 }} />
-            </View>
-            <View style={styles.cardTextWrap}>
-              <Text style={GlobalStyle.H1}>
-                Folders
-              </Text>
-              <Text style={[GlobalStyle.H4, { paddingTop: 10 }]}>
-                231 documents
-              </Text>
-            </View>
-          </CardView>
-          <CardView>
-            <View style={styles.cardTextWrap}>
-              <Text style={GlobalStyle.H1}>
-                Our
-                {'\n'}
-                Mission
-              </Text>
-              <Text style={[GlobalStyle.H4, { paddingTop: 10 }]}>
-                Money in the bank and no paper in a pocket
-              </Text>
-            </View>
-            <View style={{ justifyContent: 'flex-end', width: '100%', flexDirection: 'row' }}>
-              <Image source={AppMocData.dashBoard.card1} style={styles.cardImage} resizeMode="cover" />
-            </View>
-          </CardView>
-          <CardView style={{ backgroundColor: GlobalColors.primaryColor }}>
-            <View style={styles.cardTextWrap}>
-              <Text style={[GlobalStyle.H1, { color: 'white' }]}>
-                Add you
-                {'\n'}
-                portals
-              </Text>
-              <Text style={[GlobalStyle.H4, { paddingTop: 10, color: 'white' }]}>
-                Connect portals and online shops
-              </Text>
-            </View>
-          </CardView>
-        </View>
-      </ScrollView>
+      <View style={styles.body}>
+        <TopSection />
+        <BottomSection />
+      </View>
     </View>
   );
 }
@@ -75,6 +33,85 @@ const Header = () => (
   </View>
 );
 
+const TopSection = () => (
+  <ScrollView horizontal>
+    <View style={styles.cardViews}>
+      <CardView>
+        <View style={styles.cardTextWrap}>
+          <Image
+            source={AppMocData.dashBoard.folder}
+            style={{ width: 54, height: 42, opacity: 0.3 }} />
+        </View>
+        <View style={styles.cardTextWrap}>
+          <Text style={GlobalStyle.H1}>
+            Folders
+          </Text>
+          <Text style={[GlobalStyle.H4, { paddingTop: 10 }]}>
+            231 documents
+          </Text>
+        </View>
+      </CardView>
+      <CardView>
+        <View style={styles.cardTextWrap}>
+          <Text style={GlobalStyle.H1}>
+            Our
+            {'\n'}
+            Mission
+          </Text>
+          <Text style={[GlobalStyle.H4, { paddingTop: 10 }]}>
+            Money in the bank and no paper in a pocket
+          </Text>
+        </View>
+        <View style={{ justifyContent: 'flex-end', width: '100%', flexDirection: 'row' }}>
+          <Image source={AppMocData.dashBoard.card1} style={styles.cardImage} resizeMode="cover" />
+        </View>
+      </CardView>
+      <CardView style={{ backgroundColor: GlobalColors.primaryColor }}>
+        <View style={styles.cardTextWrap}>
+          <Text style={[GlobalStyle.H1, { color: 'white' }]}>
+            Add you
+            {'\n'}
+            portals
+          </Text>
+          <Text style={[GlobalStyle.H4, { paddingTop: 10, color: 'white' }]}>
+            Connect portals and online shops
+          </Text>
+        </View>
+        <View style={{ justifyContent: 'flex-end', width: '100%', flexDirection: 'row' }}>
+          <Image source={AppMocData.dashBoard.card2} style={styles.cardImage} resizeMode="cover" />
+        </View>
+      </CardView>
+    </View>
+  </ScrollView>
+);
+
+const BottomSection = () => (
+  <View style={styles.dashbordBottom}>
+    <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
+      <Text style={GlobalStyle.H1}>
+        Recent Documents
+      </Text>
+      <View style={{ flexDirection: 'row' }}>
+        <Icon imageUrl={AppMocData.Icons.search} marginRight={14} />
+        <Icon imageUrl={AppMocData.Icons.search} />
+      </View>
+    </View>
+    <View style={{ flexDirection: 'row', paddingTop: paddingSize.screen }}>
+      <View>
+        <Icon imageUrl={AppMocData.Icons.checkCircle} width={12} height={12} />
+        <View
+          style={{
+            backgroundColor: GlobalColors.lineColor,
+            width: 2,
+            minHeight: 50,
+            opacity: 0.1,
+            marginLeft: 5 }}
+        />
+      </View>
+    </View>
+  </View>
+);
+
 const styles = StyleSheet.create({
   header: {
     paddingHorizontal: paddingSize.screen,
@@ -82,6 +119,18 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center'
+  },
+  body: {
+    flexDirection: 'column',
+    justifyContent: 'space-between',
+    flex: 1
+  },
+  dashbordBottom: {
+    backgroundColor: 'white',
+    borderTopRightRadius: 20,
+    borderTopLeftRadius: 20,
+    padding: paddingSize.screen,
+    paddingBottom: 0
   },
   cardViews: {
     flexDirection: 'row',
@@ -97,7 +146,7 @@ const styles = StyleSheet.create({
   cardImage: {
     height: normalizeSize(80),
     width: normalizeSize(120),
-    borderRadius: borderRadius.large
+    borderBottomRightRadius: borderRadius.large
   }
 });
 
