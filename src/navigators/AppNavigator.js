@@ -20,7 +20,10 @@ const SwitchNavigator = createBottomTabNavigator(
   {
     Home: { screen: HomeNavigator },
     Documents: { screen: Page2Navigator },
-    Cam: { screen: Page3Navigator },
+    Cam: { screen: Page3Navigator,
+      navigationOptions: {
+        tabBarLabel: () => null
+      } },
     Sources: { screen: Page3Navigator },
     Settings: { screen: Page4Navigator },
   },
@@ -66,8 +69,9 @@ const SwitchNavigator = createBottomTabNavigator(
                   : AppMocData.bottomBar.navCam
               }
               style={{
-                width: 40,
-                height: 40
+                width: 65,
+                height: 65,
+                marginBottom: 25
               }}
             />
           );
@@ -108,11 +112,11 @@ const SwitchNavigator = createBottomTabNavigator(
       tabBarPosition: 'bottom',
       labelStyle: {
         fontSize: fontSize.xsmall,
-        paddingBottom: normalizeSize(20)
+        paddingBottom: normalizeSize(12)
       },
       style: {
         height: tabBarHeight,
-        paddingTop: normalizeSize(20)
+        paddingTop: normalizeSize(25)
       }
     },
   },

@@ -2,8 +2,10 @@ import React from 'react';
 
 import { View, StyleSheet, ScrollView, Text } from 'react-native';
 import { CardView } from '@components/DashBoard';
+import { Icon } from '@components/Icon';
 import GlobalStyle from '@constants/GlobalStyle';
 import { paddingSize } from '@constants/Layout';
+import AppMocData from '@share/MocData';
 
 function Home() {
   return (
@@ -28,8 +30,8 @@ const Header = () => (
       <Text style={GlobalStyle.title}>Dashboard</Text>
     </View>
     <View style={styles.icons}>
-      <Text>Search</Text>
-      <Text>Notification</Text>
+      <Icon imageUrl={AppMocData.Icons.search} marginRight={23} />
+      <Icon imageUrl={AppMocData.Icons.notification} />
     </View>
   </View>
 );

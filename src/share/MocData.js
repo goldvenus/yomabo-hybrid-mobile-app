@@ -10,6 +10,10 @@ const AppMocData = {
     navSettingActive: require('@assets/images/bottom_nav_bar/nav_setting_selected.png'),
     navSources: require('@assets/images/bottom_nav_bar/nav_sources.png'),
     navSourcesActive: require('@assets/images/bottom_nav_bar/nav_sources_selected.png')
+  },
+  Icons: {
+    search: require('@assets/images/icons/ic_search.png'),
+    notification: require('@assets/images/icons/ic_notification.png'),
   }
 };
 
