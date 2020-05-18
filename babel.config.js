@@ -11,7 +11,9 @@ module.exports = (api) => {
             '@screens': './src/containers',
             '@assets': './assets',
             '@share': './src/share',
-            '@redux': './src/redux'
+            '@redux': './src/redux',
+            '@constants': './src/constants',
+            '@components': './src/components'
           }
         }
       ]

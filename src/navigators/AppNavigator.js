@@ -1,81 +1,123 @@
 /* eslint-disable react/prop-types */
 import { connect } from 'react-redux';
-import { createAppContainer } from 'react-navigation';
+import React from 'react';
+import { createAppContainer, createBottomTabNavigator } from 'react-navigation';
 import {
   reduxifyNavigator,
   createReactNavigationReduxMiddleware,
 } from 'react-navigation-redux-helpers';
-import { createMaterialBottomTabNavigator } from 'react-navigation-material-bottom-tabs';  
 import { Image } from 'react-native';
+
 import HomeNavigator from './HomeNavigator';
 import Page2Navigator from './Page2Navigator';
 import Page3Navigator from './Page3Navigator';
 import Page4Navigator from './Page4Navigator';
-import React from 'react';
 
+import GlobalColor from '@constants/Colors';
+import { fontSize, tabBarHeight, normalizeSize } from '@constants/Layout';
 
-const SwitchNavigator = createMaterialBottomTabNavigator(
+const SwitchNavigator = createBottomTabNavigator(
   {
-    Home: {
-      screen: HomeNavigator,
-      navigationOption: {
-        tabBarIcon: ({tintColor}) => (tintColor === "#ff0000" ?
-          <Image source={require('../../assets/images/bottom_nav_bar/wavescore.png')} resizeMode="contain"
-                 style={{width: 20, height: 20, tintColor: tintColor}}/>
-          :
-          <Image source={require('../../assets/images/bottom_nav_bar/wavescore.png')} resizeMode="contain"
-                 style={{width: 20, height: 20, tintColor: tintColor}}/>
-        ),
-      }
-    },
-    Page2: {
-      screen: Page2Navigator,
-      navigationOption: {
-        tabBarIcon: ({tintColor}) => (tintColor === "#ff0000" ?
-          <Image source={require('../../assets/images/bottom_nav_bar/wavescore.png')} resizeMode="contain"
-                 style={{width: 20, height: 20, tintColor: tintColor}}/>
-          :
-          <Image source={require('../../assets/images/bottom_nav_bar/wavescore.png')} resizeMode="contain"
-                 style={{width: 20, height: 20, tintColor: tintColor}}/>
-        ),
-      }
-    },
-    Page3: {
-      screen: Page3Navigator,
-      navigationOption: {
-        tabBarIcon: ({tintColor}) => (tintColor === "#ff0000" ?
-          <Image source={require('../../assets/images/bottom_nav_bar/wavescore.png')} resizeMode="contain"
-                 style={{width: 20, height: 20, tintColor: tintColor}}/>
-          :
-          <Image source={require('../../assets/images/bottom_nav_bar/wavescore.png')} resizeMode="contain"
-                 style={{width: 20, height: 20, tintColor: tintColor}}/>
-        ),
-      }
-    },
-    Page4: {
-      screen: Page4Navigator,
-      navigationOption: {
-        tabBarIcon: ({tintColor}) => (tintColor === "#ff0000" ?
-          <Image source={require('../../assets/images/bottom_nav_bar/wavescore.png')} resizeMode="contain"
-                 style={{width: 20, height: 20, tintColor: tintColor}}/>
-          :
-          <Image source={require('../../assets/images/bottom_nav_bar/wavescore.png')} resizeMode="contain"
-                 style={{width: 20, height: 20, tintColor: tintColor}}/>
-        ),
-      }
-    }
+    Home: { screen: HomeNavigator },
+    Documents: { screen: Page2Navigator },
+    Sources: { screen: Page3Navigator },
+    Settings: { screen: Page4Navigator },
   },
   {
-    initialRouteName: "Home",
-    activeColor: "#ff0000",
-    barStyle: {
-        backgroundColor: "#ff0000",
-        borderTopLeftRadius: 30,
-        borderTopRightRadius: 30,
-        borderBottomStartRadius: 30,
-        borderBottomEndRadius: 30,
-        overflow: 'hidden'
+    defaultNavigationOptions: ({ navigation }) => ({
+      // eslint-disable-next-line consistent-return
+      tabBarIcon: ({ focused }) => {
+        const { routeName } = navigation.state;
+        if (routeName === 'Home') {
+          return (
+            <Image
+              source={
+                focused
+                  ? require('../../assets/images/bottom_nav_bar/game-active.png')
+                  : require('../../assets/images/bottom_nav_bar/game-active.png')
+              }
+              style={{
+                width: 20,
+                height: 20
+              }}
+            />
+          );
+        } if (routeName === 'Documents') {
+          return (
+            <Image
+              source={
+                focused
+                  ? require('../../assets/images/bottom_nav_bar/game-active.png')
+                  : require('../../assets/images/bottom_nav_bar/game-active.png')
+              }
+              style={{
+                width: 20,
+                height: 20
+              }}
+            />
+          );
+        } if (routeName === 'Sources') {
+          return (
+            <Image
+              source={
+                focused
+                  ? require('../../assets/images/bottom_nav_bar/game-active.png')
+                  : require('../../assets/images/bottom_nav_bar/game-active.png')
+              }
+              style={{
+                width: 20,
+                height: 20
+              }}
+            />
+          );
+        } if (routeName === 'Settings') {
+          return (
+            <Image
+              source={
+                focused
+                  ? require('../../assets/images/bottom_nav_bar/game-active.png')
+                  : require('../../assets/images/bottom_nav_bar/game-active.png')
+              }
+              style={{
+                width: 40,
+                height: 40
+              }}
+            />
+          );
+        }
+      },
+    }),
+    tabBarOptions: {
+      activeTintColor: GlobalColor.primaryColor,
+      inactiveTintColor: GlobalColor.inactiveTextColor,
+      tabBarPosition: 'bottom',
+      labelStyle: {
+        fontSize: fontSize.xsmall,
+        paddingBottom: normalizeSize(20)
+      },
+      style: {
+        height: tabBarHeight,
+        paddingTop: normalizeSize(20)
+      }
     },
+  },
+  {
+    initialRouteName: 'Home',
+    // barStyle: {
+    //   backgroundColor: 'white',
+    //   borderTopLeftRadius: 20,
+    //   borderTopRightRadius: 20,
+    //   borderColor: 'transparent',
+    //   overflow: 'hidden',
+    //   shadowRadius: 3,
+    //   shadowOffset: {
+    //     width: 2,
+    //     height: -3,
+    //   },
+    //   shadowOpacity: 1.0,
+    //   shadowColor: '#ff0000',
+    //   elevation: 0
+    // },
   },
 );
 

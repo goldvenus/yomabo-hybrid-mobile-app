@@ -1,20 +1,55 @@
 import React from 'react';
-import {
-  Container,
-  Content,
-  Text,
-} from 'native-base';
 
-import styles from './styles';
+import { View, StyleSheet, ScrollView, Text } from 'react-native';
+import { CardView } from '@components/DashBoard';
+import GlobalStyle from '@constants/GlobalStyle';
+import { paddingSize } from '@constants/Layout';
 
 function Home() {
   return (
-    <Container style={styles.container}>
-      <Content contentContainerStyle={styles.content}>
-        <Text style={styles.text}>Home</Text>
-      </Content>
-    </Container>
+    <View style={GlobalStyle.screenContainer}>
+      <Header />
+      <ScrollView horizontal>
+        <View style={styles.cardViews}>
+          <CardView />
+          <CardView />
+          <CardView />
+          <CardView />
+        </View>
+      </ScrollView>
+    </View>
   );
 }
+
+const Header = () => (
+  <View style={styles.header}>
+    <View>
+      <Text style={GlobalStyle.description}>Ole Klaenfoth</Text>
+      <Text style={GlobalStyle.title}>Dashboard</Text>
+    </View>
+    <View style={styles.icons}>
+      <Text>Search</Text>
+      <Text>Notification</Text>
+    </View>
+  </View>
+);
+
+const styles = StyleSheet.create({
+  header: {
+    paddingHorizontal: paddingSize.screen,
+    paddingTop: paddingSize.screenTop,
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center'
+  },
+  cardViews: {
+    flexDirection: 'row',
+    paddingLeft: paddingSize.screen,
+    paddingTop: 27
+  },
+  icons: {
+    flexDirection: 'row',
+  }
+});
 
 export default Home;

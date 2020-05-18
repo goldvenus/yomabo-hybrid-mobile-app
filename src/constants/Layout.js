@@ -25,8 +25,9 @@ export const iconSize = {
 export const borderRadius = {
   small: 4,
   medium: 8,
-  large: 16,
+  large: 12,
 };
+export const tabBarHeight = normalizeSize(100);
 export const fontSize = {
   xxxsmall: 8,
   xxsmall: 10,
@@ -34,7 +35,7 @@ export const fontSize = {
   small: 14,
   smedium: 16,
   medium: normalizeSize(22),
-  large: normalizeSize(38),
+  large: normalizeSize(30),
   xlarge: normalizeSize(52),
   xxlarge: normalizeSize(84),
   xxxlarge: normalizeSize(92),
@@ -43,4 +44,10 @@ export const fontSize = {
   xxlargeOffset: Platform.OS === 'ios' ? 0 : normalizeSize(-12),
   xlargeOffset: Platform.OS === 'ios' ? 0 : normalizeSize(-8),
   largeOffset: Platform.OS === 'ios' ? 0 : normalizeSize(-6),
+};
+
+export const paddingSize = {
+  screen: normalizeSize(30),
+  dashCard: 16,
+  screenTop: normalizeSize(55)
 };
