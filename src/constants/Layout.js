@@ -1,8 +1,9 @@
 import { Dimensions, Platform, PixelRatio } from 'react-native';
 
-const baseWidth = 414; // iPhone 8 Plus
+// const baseWidth = 375; // iPhone 8 Plus
+const baseHeight = 812;
 const { width, height } = Dimensions.get('window');
-const scale = width / baseWidth;
+const scale = height / baseHeight;
 
 export const normalizeSize = (size) => {
   const newSize = size * scale;
@@ -30,7 +31,7 @@ export const borderRadius = {
 export const tabBarHeight = normalizeSize(100);
 export const fontSize = {
   xxxsmall: 8,
-  xxsmall: 10,
+  xxsmall: 11,
   xsmall: 12,
   small: 14,
   smedium: 16,
@@ -48,7 +49,9 @@ export const fontSize = {
 
 export const paddingSize = {
   screen: normalizeSize(30),
-  dashCard: 16,
-  dashCardPadding: 20,
-  screenTop: normalizeSize(55)
+  dashCard: normalizeSize(16),
+  dashCardPadding: normalizeSize(20),
+  screenTop: normalizeSize(55),
+  p_25: normalizeSize(25),
+  p_27: normalizeSize(27)
 };

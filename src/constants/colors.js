@@ -5,6 +5,7 @@ const GlobalColors = {
   primaryColor: '#30B57E',
   secondaryColor: '#F07258',
   white: '#ffffff',
+  greyColor: '#F2F2F2',
   primaryTextColor: '#4D4D4D',
   borderColor: '#E3E3E3',
   textHintColor: '#DBDBDB',

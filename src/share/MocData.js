@@ -20,7 +20,9 @@ const AppMocData = {
     card1: require('@assets/images/dashBoard/card1.png'),
     card2: require('@assets/images/dashBoard/card2.png'),
     card3: require('@assets/images/dashBoard/card3.png'),
-    folder: require('@assets/images/dashBoard/ic_folder.png')
+    folder: require('@assets/images/dashBoard/ic_folder.png'),
+    bildKlarna: require('@assets/images/dashBoard/bild_klarna.png'),
+    bildPaypal: require('@assets/images/dashBoard/bild_paypal.png'),
   }
 };
 

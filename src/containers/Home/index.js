@@ -7,6 +7,7 @@ import GlobalStyle from '@constants/GlobalStyle';
 import { paddingSize, borderRadius, normalizeSize } from '@constants/Layout';
 import AppMocData from '@share/MocData';
 import GlobalColors from '@constants/Colors';
+import { fontSize } from '../../constants/Layout';
 
 function Home() {
   return (
@@ -103,10 +104,40 @@ const BottomSection = () => (
           style={{
             backgroundColor: GlobalColors.lineColor,
             width: 2,
-            minHeight: 50,
+            flex: 1,
             opacity: 0.1,
             marginLeft: 5 }}
         />
+      </View>
+      <View style={{ flexDirection: 'column', paddingLeft: 14, paddingBottom: paddingSize.p_25 }}>
+        <Text style={{
+          fontSize: fontSize.xsmall,
+          marginBottom: paddingSize.dashCardPadding }}>
+          vor 12 Minuten
+        </Text>
+        <View style={{ flexDirection: 'row', marginBottom: 13 }}>
+          <View style={styles.bildStyle}>
+            <Icon imageUrl={AppMocData.dashBoard.bildPaypal} width={35} height={35} />
+          </View>
+          <View style={[styles.bildStyle, { marginHorizontal: 10 }]}>
+            <Icon imageUrl={AppMocData.dashBoard.bildKlarna} width={35} height={35} resizeMode="contain" />
+          </View>
+          <View style={styles.bildStyle}>
+            <Icon imageUrl={AppMocData.dashBoard.bildKlarna} width={35} height={35} resizeMode="contain" />
+          </View>
+        </View>
+        <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+          <View style={{
+            backgroundColor: GlobalColors.primaryColor,
+            width: 10,
+            height: 10,
+            borderRadius: 4 }} />
+          <Text style={{ fontSize: fontSize.xxsmall,
+            opacity: 0.3,
+            paddingLeft: 7 }}>
+            3 Rechnungen aus Email-Postfach
+          </Text>
+        </View>
       </View>
     </View>
   </View>
@@ -127,15 +158,20 @@ const styles = StyleSheet.create({
   },
   dashbordBottom: {
     backgroundColor: 'white',
-    borderTopRightRadius: 20,
-    borderTopLeftRadius: 20,
-    padding: paddingSize.screen,
-    paddingBottom: 0
+    borderTopRightRadius: paddingSize.dashCardPadding,
+    borderTopLeftRadius: paddingSize.dashCardPadding,
+    paddingHorizontal: paddingSize.screen,
+    paddingTop: paddingSize.p_25
+  },
+  bildStyle: {
+    padding: paddingSize.p_25,
+    backgroundColor: GlobalColors.greyColor,
+    borderRadius: paddingSize.dashCardPadding
   },
   cardViews: {
     flexDirection: 'row',
     paddingLeft: paddingSize.screen,
-    paddingTop: 27
+    paddingTop: paddingSize.p_27
   },
   icons: {
     flexDirection: 'row',

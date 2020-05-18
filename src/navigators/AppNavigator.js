@@ -41,8 +41,8 @@ const SwitchNavigator = createBottomTabNavigator(
                   : AppMocData.bottomBar.navDashBoard
               }
               style={{
-                width: 40,
-                height: 40
+                width: normalizeSize(40),
+                height: normalizeSize(40)
               }}
             />
           );
@@ -55,8 +55,8 @@ const SwitchNavigator = createBottomTabNavigator(
                   : AppMocData.bottomBar.navDocuments
               }
               style={{
-                width: 40,
-                height: 40
+                width: normalizeSize(40),
+                height: normalizeSize(40)
               }}
             />
           );
@@ -69,9 +69,9 @@ const SwitchNavigator = createBottomTabNavigator(
                   : AppMocData.bottomBar.navCam
               }
               style={{
-                width: 65,
-                height: 65,
-                marginBottom: 25
+                width: normalizeSize(65),
+                height: normalizeSize(65),
+                marginBottom: normalizeSize(25)
               }}
             />
           );
@@ -84,8 +84,8 @@ const SwitchNavigator = createBottomTabNavigator(
                   : AppMocData.bottomBar.navSources
               }
               style={{
-                width: 40,
-                height: 40
+                width: normalizeSize(40),
+                height: normalizeSize(40)
               }}
             />
           );
@@ -98,8 +98,8 @@ const SwitchNavigator = createBottomTabNavigator(
                   : AppMocData.bottomBar.navSetting
               }
               style={{
-                width: 40,
-                height: 40
+                width: normalizeSize(40),
+                height: normalizeSize(40)
               }}
             />
           );
