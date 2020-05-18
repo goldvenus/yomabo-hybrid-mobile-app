@@ -12,7 +12,7 @@ import HomeNavigator from './HomeNavigator';
 import Page2Navigator from './Page2Navigator';
 import Page3Navigator from './Page3Navigator';
 import Page4Navigator from './Page4Navigator';
-
+import AppMocData from '@share/MocData';
 import GlobalColor from '@constants/Colors';
 import { fontSize, tabBarHeight, normalizeSize } from '@constants/Layout';
 
@@ -20,6 +20,7 @@ const SwitchNavigator = createBottomTabNavigator(
   {
     Home: { screen: HomeNavigator },
     Documents: { screen: Page2Navigator },
+    Cam: { screen: Page3Navigator },
     Sources: { screen: Page3Navigator },
     Settings: { screen: Page4Navigator },
   },
@@ -33,12 +34,12 @@ const SwitchNavigator = createBottomTabNavigator(
             <Image
               source={
                 focused
-                  ? require('../../assets/images/bottom_nav_bar/game-active.png')
-                  : require('../../assets/images/bottom_nav_bar/game-active.png')
+                  ? AppMocData.bottomBar.navDashBoardActive
+                  : AppMocData.bottomBar.navDashBoard
               }
               style={{
-                width: 20,
-                height: 20
+                width: 40,
+                height: 40
               }}
             />
           );
@@ -47,12 +48,26 @@ const SwitchNavigator = createBottomTabNavigator(
             <Image
               source={
                 focused
-                  ? require('../../assets/images/bottom_nav_bar/game-active.png')
-                  : require('../../assets/images/bottom_nav_bar/game-active.png')
+                  ? AppMocData.bottomBar.navDocumentsActive
+                  : AppMocData.bottomBar.navDocuments
               }
               style={{
-                width: 20,
-                height: 20
+                width: 40,
+                height: 40
+              }}
+            />
+          );
+        } if (routeName === 'Cam') {
+          return (
+            <Image
+              source={
+                focused
+                  ? AppMocData.bottomBar.navCamActive
+                  : AppMocData.bottomBar.navCam
+              }
+              style={{
+                width: 40,
+                height: 40
               }}
             />
           );
@@ -61,12 +76,12 @@ const SwitchNavigator = createBottomTabNavigator(
             <Image
               source={
                 focused
-                  ? require('../../assets/images/bottom_nav_bar/game-active.png')
-                  : require('../../assets/images/bottom_nav_bar/game-active.png')
+                  ? AppMocData.bottomBar.navSourcesActive
+                  : AppMocData.bottomBar.navSources
               }
               style={{
-                width: 20,
-                height: 20
+                width: 40,
+                height: 40
               }}
             />
           );
@@ -75,8 +90,8 @@ const SwitchNavigator = createBottomTabNavigator(
             <Image
               source={
                 focused
-                  ? require('../../assets/images/bottom_nav_bar/game-active.png')
-                  : require('../../assets/images/bottom_nav_bar/game-active.png')
+                  ? AppMocData.bottomBar.navSettingActive
+                  : AppMocData.bottomBar.navSetting
               }
               style={{
                 width: 40,
