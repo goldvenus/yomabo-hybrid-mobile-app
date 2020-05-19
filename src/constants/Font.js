@@ -1,7 +1,7 @@
 const FontStyle = {
   regular: 'Avenir-Light',
   bold: 'Avenir-Black',
-  extraBold: 'Avenir-Heavy',
+  heavy: 'Avenir-Heavy',
   light: 'Avenir-Light',
   medium: 'Avenir-Medium',
   roman: 'Avenir-Roman'

@@ -27,6 +27,7 @@ export const borderRadius = {
   small: 4,
   medium: 8,
   large: 12,
+  extra: 20,
   header: normalizeSize(39)
 };
 export const HeaderHeight = normalizeSize(106);

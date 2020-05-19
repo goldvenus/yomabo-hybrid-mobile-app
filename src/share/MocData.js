@@ -21,6 +21,7 @@ const AppMocData = {
     gridActive: require('@assets/images/icons/icon_grid_active.png'),
     scanviewBackButton: require('@assets/images/icons/scanview_back_button.png'),
     scanviewCameraButton: require('@assets/images/icons/scanview_camera_button.png'),
+    more: require('@assets/images/icons/ic_more.png'),
   },
   dashBoard: {
     card1: require('@assets/images/dashBoard/card1.png'),

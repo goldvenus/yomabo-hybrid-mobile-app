@@ -34,6 +34,11 @@ export default StyleSheet.create({
     fontFamily: FontStyle.bold,
     lineHeight: normalizeSize(27)
   },
+  H3: {
+    color: GlobalColor.primaryTextColor,
+    fontSize: fontSize.ssmedium,
+    fontFamily: FontStyle.heavy
+  },
   H4: {
     color: GlobalColor.titleDescription,
     opacity: 0.3,
