@@ -2,8 +2,9 @@ import React, { useState, useEffect } from 'react';
 import { View, TouchableOpacity, StyleSheet } from 'react-native';
 import { Camera } from 'expo-camera';
 import * as Permissions from 'expo-permissions';
-import GlobalColors from '@constants/Colors';
 import { normalizeSize } from '@constants/Layout';
+import { Icon } from '../../components/Icon';
+import AppMocData from '@share/MocData';
 
 export default function ScanPassport(props) {
   const [hasPermission, setHasPermission] = useState(null);
@@ -37,17 +38,14 @@ export default function ScanPassport(props) {
             backgroundColor: 'transparent',
             flexDirection: 'row',
           }}>
-          <View style={{
-            flex: 1,
-            flexDirection: 'row',
-            justifyContent: 'space-between',
-            alignSelf: 'flex-end'
-          }}>
+          <View style={styles.buttonGroup}>
             <TouchableOpacity
               style={styles.backButton}
               onPress={() => {
                 navigation.navigate('Home');
-              }} />
+              }}>
+              <Icon imageUrl={AppMocData.Icons.scanviewBackButton} width={96} height={68} />
+            </TouchableOpacity>
             <TouchableOpacity
               style={styles.takePhoto}
               onPress={() => {
@@ -56,7 +54,9 @@ export default function ScanPassport(props) {
                     ? Camera.Constants.Type.front
                     : Camera.Constants.Type.back
                 );
-              }} />
+              }}>
+              <Icon imageUrl={AppMocData.Icons.scanviewCameraButton} width={85} height={85} />
+            </TouchableOpacity>
           </View>
 
         </View>
@@ -66,6 +66,14 @@ export default function ScanPassport(props) {
 }
 
 const styles = StyleSheet.create({
+  buttonGroup: {
+    flex: 1,
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignSelf: 'flex-end',
+    paddingRight: normalizeSize(27),
+    paddingBottom: normalizeSize(15)
+  },
   container: {
     flex: 1,
     backgroundColor: '#222222',
@@ -73,20 +81,9 @@ const styles = StyleSheet.create({
   backButton: {
     alignSelf: 'flex-start',
     alignItems: 'center',
-    backgroundColor: GlobalColors.secondaryColor,
-    width: normalizeSize(96),
-    height: normalizeSize(68),
-    borderBottomRightRadius: normalizeSize(34),
-    borderTopRightRadius: normalizeSize(34)
   },
   takePhoto: {
     alignSelf: 'flex-end',
-    alignItems: 'center',
-    backgroundColor: 'white',
-    width: normalizeSize(80),
-    height: normalizeSize(80),
-    borderRadius: normalizeSize(40),
-    borderColor: GlobalColors.inactiveTextColor,
-    borderWidth: 6
+    alignItems: 'center'
   }
 });

@@ -6,8 +6,8 @@ import { Icon } from '@components/Icon';
 import GlobalStyle from '@constants/GlobalStyle';
 import GlobalColors from '@constants/Colors';
 import AppMocData from '@share/MocData';
-import { paddingSize, borderRadius, normalizeSize } from '@constants/Layout';
-import { fontSize } from '../../constants/Layout';
+import { paddingSize, borderRadius, normalizeSize, fontSize } from '@constants/Layout';
+import FontStyle from '@constants/Font';
 
 function Home() {
   return (
@@ -112,6 +112,7 @@ const BottomSection = () => (
       <View style={{ flexDirection: 'column', paddingLeft: 14, paddingBottom: paddingSize.p_25 }}>
         <Text style={{
           fontSize: fontSize.xsmall,
+          fontFamily: FontStyle.medium,
           marginBottom: paddingSize.dashCardPadding }}>
           vor 12 Minuten
         </Text>
@@ -134,6 +135,7 @@ const BottomSection = () => (
             borderRadius: 4 }} />
           <Text style={{ fontSize: fontSize.xxsmall,
             opacity: 0.3,
+            fontFamily: FontStyle.medium,
             paddingLeft: 7 }}>
             3 Rechnungen aus Email-Postfach
           </Text>

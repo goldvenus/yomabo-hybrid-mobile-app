@@ -15,6 +15,7 @@ import Page4Navigator from './Page4Navigator';
 import ScanPassportNavigator from './ScanPassportNavigator';
 import AppMocData from '@share/MocData';
 import GlobalColor from '@constants/Colors';
+import FontStyle from '@constants/Font';
 import { fontSize, tabBarHeight, normalizeSize } from '@constants/Layout';
 
 const SwitchNavigator = createBottomTabNavigator(
@@ -114,6 +115,7 @@ const SwitchNavigator = createBottomTabNavigator(
       tabBarPosition: 'bottom',
       labelStyle: {
         fontSize: fontSize.xsmall,
+        fontFamily: FontStyle.medium,
         paddingBottom: normalizeSize(12)
       },
       style: {
