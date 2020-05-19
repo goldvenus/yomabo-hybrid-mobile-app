@@ -2,28 +2,24 @@ import React from 'react';
 import { Image } from 'react-native';
 import PropTypes from 'prop-types';
 
-export const Icon = (props) => {
-  const { imageUrl, width, height, ...otherStyle } = props;
-  return (
-    <Image
-      source={imageUrl}
-      style={{
-        width,
-        height,
-        ...otherStyle
-      }} />
-  );
-};
+export const Icon = ({ imageUrl, width, height, style }) => (
+  <Image
+    source={imageUrl}
+    style={[{
+      width,
+      height
+    }, style]} />
+);
 
 Icon.propTypes = {
-  imageUrl: PropTypes.string.isRequired,
+  imageUrl: PropTypes.any.isRequired,
   width: PropTypes.number,
   height: PropTypes.number,
-  otherStyle: PropTypes.object
+  style: PropTypes.object
 };
 
 Icon.defaultProps = {
   width: 28,
   height: 28,
-  otherStyle: {}
+  style: {}
 };

@@ -12,6 +12,7 @@ import HomeNavigator from './HomeNavigator';
 import Page2Navigator from './Page2Navigator';
 import Page3Navigator from './Page3Navigator';
 import Page4Navigator from './Page4Navigator';
+import ScanPassportNavigator from './ScanPassportNavigator';
 import AppMocData from '@share/MocData';
 import GlobalColor from '@constants/Colors';
 import { fontSize, tabBarHeight, normalizeSize } from '@constants/Layout';
@@ -20,9 +21,10 @@ const SwitchNavigator = createBottomTabNavigator(
   {
     Home: { screen: HomeNavigator },
     Documents: { screen: Page2Navigator },
-    Cam: { screen: Page3Navigator,
+    Cam: { screen: ScanPassportNavigator,
       navigationOptions: {
-        tabBarLabel: () => null
+        tabBarLabel: () => null,
+        tabBarVisible: false
       } },
     Sources: { screen: Page3Navigator },
     Settings: { screen: Page4Navigator },

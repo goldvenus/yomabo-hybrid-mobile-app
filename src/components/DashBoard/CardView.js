@@ -27,7 +27,7 @@ const styles = StyleSheet.create({
 });
 
 CardView.propTypes = {
-  children: PropTypes.object,
+  children: PropTypes.any,
   style: PropTypes.object
 };
 

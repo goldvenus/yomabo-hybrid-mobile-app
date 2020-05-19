@@ -8,7 +8,7 @@
     "version": "1.0.0",
     "orientation": "portrait",
     "primaryColor": "#cccccc",
-    "icon": "./assets/images/mark.png",
+    "icon": "./assets/images/icon.png",
     "loading": {
       "icon": "./assets/images/mark.png",
       "hideExponentText": false
@@ -27,10 +27,11 @@
       ]
     },
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.yomabo.app"
     },
     "android": {
-      "package": "com.yomabo.app"
+      "package": "com.yomabo.app"      
     },
     "platforms": [
       "android",

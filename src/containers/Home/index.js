@@ -4,9 +4,9 @@ import { View, StyleSheet, ScrollView, Text, Image } from 'react-native';
 import { CardView } from '@components/DashBoard';
 import { Icon } from '@components/Icon';
 import GlobalStyle from '@constants/GlobalStyle';
-import { paddingSize, borderRadius, normalizeSize } from '@constants/Layout';
-import AppMocData from '@share/MocData';
 import GlobalColors from '@constants/Colors';
+import AppMocData from '@share/MocData';
+import { paddingSize, borderRadius, normalizeSize } from '@constants/Layout';
 import { fontSize } from '../../constants/Layout';
 
 function Home() {
@@ -28,7 +28,7 @@ const Header = () => (
       <Text style={GlobalStyle.title}>Dashboard</Text>
     </View>
     <View style={styles.icons}>
-      <Icon imageUrl={AppMocData.Icons.search} marginRight={23} />
+      <Icon imageUrl={AppMocData.Icons.search} style={{ marginRight: 23 }} />
       <Icon imageUrl={AppMocData.Icons.notification} />
     </View>
   </View>
@@ -93,7 +93,7 @@ const BottomSection = () => (
         Recent Documents
       </Text>
       <View style={{ flexDirection: 'row' }}>
-        <Icon imageUrl={AppMocData.Icons.search} marginRight={14} />
+        <Icon imageUrl={AppMocData.Icons.search} style={{ marginRight: 14 }} />
         <Icon imageUrl={AppMocData.Icons.search} />
       </View>
     </View>
@@ -120,10 +120,10 @@ const BottomSection = () => (
             <Icon imageUrl={AppMocData.dashBoard.bildPaypal} width={35} height={35} />
           </View>
           <View style={[styles.bildStyle, { marginHorizontal: 10 }]}>
-            <Icon imageUrl={AppMocData.dashBoard.bildKlarna} width={35} height={35} resizeMode="contain" />
+            <Icon imageUrl={AppMocData.dashBoard.bildKlarna} width={35} height={35} style={{ resizeMode: 'contain' }} />
           </View>
           <View style={styles.bildStyle}>
-            <Icon imageUrl={AppMocData.dashBoard.bildKlarna} width={35} height={35} resizeMode="contain" />
+            <Icon imageUrl={AppMocData.dashBoard.bildKlarna} width={35} height={35} style={{ resizeMode: 'contain' }} />
           </View>
         </View>
         <View style={{ flexDirection: 'row', alignItems: 'center' }}>

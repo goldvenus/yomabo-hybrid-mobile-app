@@ -1,0 +1,91 @@
+import React, { useState, useEffect } from 'react';
+import { Text, View, TouchableOpacity, StyleSheet } from 'react-native';
+import { Camera } from 'expo-camera';
+import * as Permissions from 'expo-permissions';
+import GlobalColors from '@constants/Colors';
+import { normalizeSize } from '@constants/Layout';
+
+export default function ScanPassport() {
+  const [hasPermission, setHasPermission] = useState(null);
+  const [type, setType] = useState(Camera.Constants.Type.back);
+
+  useEffect(() => {
+    (async () => {
+      const permission = await Permissions.getAsync(Permissions.CAMERA_ROLL);
+      if (permission.status !== 'granted') {
+        const newPermission = await Permissions.askAsync(Permissions.CAMERA_ROLL);
+        if (newPermission.status === 'granted') {
+          setHasPermission(true);
+        }
+      }
+    })();
+  }, []);
+
+  // if (hasPermission === null) {
+  //   return <View />;
+  // }
+  // if (hasPermission === false) {
+  //   return <Text>No access to camera</Text>;
+  // }
+  return (
+    <View style={{ flex: 1 }}>
+      <Camera style={{ flex: 1 }} type={type}>
+        <View
+          style={{
+            flex: 1,
+            backgroundColor: 'transparent',
+            flexDirection: 'row',
+          }}>
+          <View style={{
+            flex: 1,
+            flexDirection: 'row',
+            justifyContent: 'space-between',
+            alignSelf: 'flex-end'
+          }}>
+            <TouchableOpacity
+              style={styles.backButton}
+              onPress={() => {
+                setType(
+                  type === Camera.Constants.Type.back
+                    ? Camera.Constants.Type.front
+                    : Camera.Constants.Type.back
+                );
+              }} />
+            <TouchableOpacity
+              style={{
+                flex: 0.1,
+                alignSelf: 'flex-end',
+                alignItems: 'center',
+              }}
+              onPress={() => {
+                setType(
+                  type === Camera.Constants.Type.back
+                    ? Camera.Constants.Type.front
+                    : Camera.Constants.Type.back
+                );
+              }}>
+              <Text style={{ fontSize: 18, marginBottom: 10, color: 'white' }}> Flip </Text>
+            </TouchableOpacity>
+          </View>
+
+        </View>
+      </Camera>
+    </View>
+  );
+}
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#222222',
+  },
+  backButton: {
+    alignSelf: 'flex-start',
+    alignItems: 'center',
+    backgroundColor: GlobalColors.secondaryColor,
+    width: normalizeSize(96),
+    height: normalizeSize(68),
+    borderBottomRightRadius: normalizeSize(34),
+    borderTopRightRadius: normalizeSize(34)
+  }
+});
