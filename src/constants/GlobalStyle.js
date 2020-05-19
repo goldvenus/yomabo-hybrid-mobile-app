@@ -28,6 +28,12 @@ export default StyleSheet.create({
     fontFamily: FontStyle.bold,
     lineHeight: normalizeSize(27)
   },
+  H2: {
+    fontSize: fontSize.ssmedium,
+    color: GlobalColor.primaryTextColor,
+    fontFamily: FontStyle.bold,
+    lineHeight: normalizeSize(27)
+  },
   H4: {
     color: GlobalColor.titleDescription,
     opacity: 0.3,

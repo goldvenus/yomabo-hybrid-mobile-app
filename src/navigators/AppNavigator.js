@@ -9,7 +9,7 @@ import {
 import { Image } from 'react-native';
 
 import HomeNavigator from './HomeNavigator';
-import Page2Navigator from './Page2Navigator';
+import DocumentNavigator from './DocumentNavigator';
 import Page3Navigator from './Page3Navigator';
 import Page4Navigator from './Page4Navigator';
 import ScanPassportNavigator from './ScanPassportNavigator';
@@ -21,7 +21,7 @@ import { fontSize, tabBarHeight, normalizeSize } from '@constants/Layout';
 const SwitchNavigator = createBottomTabNavigator(
   {
     Home: { screen: HomeNavigator },
-    Documents: { screen: Page2Navigator },
+    Documents: { screen: DocumentNavigator },
     Cam: { screen: ScanPassportNavigator,
       navigationOptions: {
         tabBarLabel: () => null,

@@ -27,7 +27,9 @@ export const borderRadius = {
   small: 4,
   medium: 8,
   large: 12,
+  header: normalizeSize(39)
 };
+export const HeaderHeight = normalizeSize(106);
 export const tabBarHeight = normalizeSize(100);
 export const fontSize = {
   xxxsmall: 8,
@@ -35,6 +37,7 @@ export const fontSize = {
   xsmall: 12,
   small: 14,
   smedium: 16,
+  ssmedium: normalizeSize(22),
   medium: normalizeSize(24),
   large: normalizeSize(30),
   xlarge: normalizeSize(52),

@@ -7,7 +7,7 @@ import { Icon } from '../../components/Icon';
 import AppMocData from '@share/MocData';
 
 export default function ScanPassport(props) {
-  const [hasPermission, setHasPermission] = useState(null);
+  // const [hasPermission, setHasPermission] = useState(null);
   const [type, setType] = useState(Camera.Constants.Type.back);
   const { navigation } = props;
 
@@ -17,7 +17,7 @@ export default function ScanPassport(props) {
       if (permission.status !== 'granted') {
         const newPermission = await Permissions.askAsync(Permissions.CAMERA_ROLL);
         if (newPermission.status === 'granted') {
-          setHasPermission(true);
+          // setHasPermission(true);
         }
       }
     })();
