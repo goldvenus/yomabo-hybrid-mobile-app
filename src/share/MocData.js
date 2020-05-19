@@ -29,6 +29,9 @@ const AppMocData = {
     folder: require('@assets/images/dashBoard/ic_folder.png'),
     bildKlarna: require('@assets/images/dashBoard/bild_klarna.png'),
     bildPaypal: require('@assets/images/dashBoard/bild_paypal.png'),
+  },
+  camera: {
+    scanviewBorder: require('@assets/images/camera/scanview_border.png')
   }
 };
 

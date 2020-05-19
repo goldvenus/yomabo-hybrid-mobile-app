@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { View, TouchableOpacity, StyleSheet } from 'react-native';
+import { View, TouchableOpacity, StyleSheet, Image } from 'react-native';
 import { Camera } from 'expo-camera';
 import * as Permissions from 'expo-permissions';
 import { normalizeSize } from '@constants/Layout';
@@ -36,8 +36,19 @@ export default function ScanPassport(props) {
           style={{
             flex: 1,
             backgroundColor: 'transparent',
-            flexDirection: 'row',
+            flexDirection: 'column',
+            justifyContent: 'center',
+            alignItems: 'center'
           }}>
+          <Image
+            source={AppMocData.camera.scanviewBorder}
+            style={{
+              height: '76%',
+              resizeMode: 'contain',
+              justifyContent: 'center',
+              alignItems: 'center',
+              marginTop: normalizeSize(40)
+            }} />
           <View style={styles.buttonGroup}>
             <TouchableOpacity
               style={styles.backButton}
@@ -58,7 +69,6 @@ export default function ScanPassport(props) {
               <Icon imageUrl={AppMocData.Icons.scanviewCameraButton} width={85} height={85} />
             </TouchableOpacity>
           </View>
-
         </View>
       </Camera>
     </View>
@@ -69,8 +79,8 @@ const styles = StyleSheet.create({
   buttonGroup: {
     flex: 1,
     flexDirection: 'row',
+    width: '100%',
     justifyContent: 'space-between',
-    alignSelf: 'flex-end',
     paddingRight: normalizeSize(27),
     paddingBottom: normalizeSize(15)
   },
@@ -79,7 +89,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#222222',
   },
   backButton: {
-    alignSelf: 'flex-start',
+    alignSelf: 'flex-end',
     alignItems: 'center',
   },
   takePhoto: {
