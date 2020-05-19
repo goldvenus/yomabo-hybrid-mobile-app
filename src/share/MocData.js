@@ -15,6 +15,10 @@ const AppMocData = {
     search: require('@assets/images/icons/ic_search.png'),
     notification: require('@assets/images/icons/ic_notification.png'),
     checkCircle: require('@assets/images/icons/ic_checkcircle.png'),
+    list: require('@assets/images/icons/icon_list.png'),
+    listActive: require('@assets/images/icons/icon_list_active.png'),
+    grid: require('@assets/images/icons/icon_grid.png'),
+    gridActive: require('@assets/images/icons/icon_grid_active.png'),
   },
   dashBoard: {
     card1: require('@assets/images/dashBoard/card1.png'),

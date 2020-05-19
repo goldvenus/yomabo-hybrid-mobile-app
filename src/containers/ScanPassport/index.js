@@ -1,13 +1,14 @@
 import React, { useState, useEffect } from 'react';
-import { Text, View, TouchableOpacity, StyleSheet } from 'react-native';
+import { View, TouchableOpacity, StyleSheet } from 'react-native';
 import { Camera } from 'expo-camera';
 import * as Permissions from 'expo-permissions';
 import GlobalColors from '@constants/Colors';
 import { normalizeSize } from '@constants/Layout';
 
-export default function ScanPassport() {
+export default function ScanPassport(props) {
   const [hasPermission, setHasPermission] = useState(null);
   const [type, setType] = useState(Camera.Constants.Type.back);
+  const { navigation } = props;
 
   useEffect(() => {
     (async () => {
@@ -45,27 +46,17 @@ export default function ScanPassport() {
             <TouchableOpacity
               style={styles.backButton}
               onPress={() => {
-                setType(
-                  type === Camera.Constants.Type.back
-                    ? Camera.Constants.Type.front
-                    : Camera.Constants.Type.back
-                );
+                navigation.navigate('Home');
               }} />
             <TouchableOpacity
-              style={{
-                flex: 0.1,
-                alignSelf: 'flex-end',
-                alignItems: 'center',
-              }}
+              style={styles.takePhoto}
               onPress={() => {
                 setType(
                   type === Camera.Constants.Type.back
                     ? Camera.Constants.Type.front
                     : Camera.Constants.Type.back
                 );
-              }}>
-              <Text style={{ fontSize: 18, marginBottom: 10, color: 'white' }}> Flip </Text>
-            </TouchableOpacity>
+              }} />
           </View>
 
         </View>
@@ -87,5 +78,15 @@ const styles = StyleSheet.create({
     height: normalizeSize(68),
     borderBottomRightRadius: normalizeSize(34),
     borderTopRightRadius: normalizeSize(34)
+  },
+  takePhoto: {
+    alignSelf: 'flex-end',
+    alignItems: 'center',
+    backgroundColor: 'white',
+    width: normalizeSize(80),
+    height: normalizeSize(80),
+    borderRadius: normalizeSize(40),
+    borderColor: GlobalColors.inactiveTextColor,
+    borderWidth: 6
   }
 });

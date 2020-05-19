@@ -93,8 +93,8 @@ const BottomSection = () => (
         Recent Documents
       </Text>
       <View style={{ flexDirection: 'row' }}>
-        <Icon imageUrl={AppMocData.Icons.search} style={{ marginRight: 14 }} />
-        <Icon imageUrl={AppMocData.Icons.search} />
+        <Icon imageUrl={AppMocData.Icons.list} style={{ marginRight: 14 }} />
+        <Icon imageUrl={AppMocData.Icons.grid} />
       </View>
     </View>
     <View style={{ flexDirection: 'row', paddingTop: paddingSize.screen }}>

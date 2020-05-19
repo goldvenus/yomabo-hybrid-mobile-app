@@ -38,9 +38,12 @@ class App extends Component {
     return Promise.all([
       Asset.loadAsync(this.imageArray),
       Font.loadAsync({
-        'Antonio': require('./assets/fonts/Antonio-Light.ttf'),
-        'Antonio-Bold': require('./assets/fonts/Antonio-Bold.ttf'),
-        'Expo-Bold': require('./assets/fonts/exo-2-bold.ttf'),
+        'Avenir-Black': require('./assets/fonts/Avenir-Black.ttf'),
+        'Avenir-Book': require('./assets/fonts/Avenir-Book.ttf'),
+        'Avenir-Heavy': require('./assets/fonts/Avenir-Heavy.ttf'),
+        'Avenir-Light': require('./assets/fonts/Avenir-Light.ttf'),
+        'Avenir-Medium': require('./assets/fonts/Avenir-Medium.ttf'),
+        'Avenir-Roman': require('./assets/fonts/Avenir-Roman.ttf'),
       }),
     ]);
   };
