@@ -57,5 +57,7 @@ export const paddingSize = {
   dashCardPadding: normalizeSize(20),
   screenTop: normalizeSize(55),
   p_25: normalizeSize(25),
-  p_27: normalizeSize(27)
+  p_23: normalizeSize(23),
+  p_27: normalizeSize(27),
+  p_50: normalizeSize(50)
 };

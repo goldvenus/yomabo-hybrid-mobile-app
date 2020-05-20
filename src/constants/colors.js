@@ -13,7 +13,8 @@ const GlobalColors = {
   forgroundColor: '#F5F5F5',
   inactiveTextColor: '#C3C3C3',
   titleDescription: '#2F2F39',
-  lineColor: '#707070'
+  lineColor: '#707070',
+  lightGray: '#F9F9F9'
 };
 
 export default GlobalColors;

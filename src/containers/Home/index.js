@@ -97,7 +97,7 @@ const BottomSection = () => (
         <Icon imageUrl={AppMocData.Icons.grid} />
       </View>
     </View>
-    <View style={{ flexDirection: 'row', paddingTop: paddingSize.screen }}>
+    <View style={{ flexDirection: 'row', paddingTop: paddingSize.screen - 15 }}>
       <View>
         <Icon imageUrl={AppMocData.Icons.checkCircle} width={12} height={12} />
         <View

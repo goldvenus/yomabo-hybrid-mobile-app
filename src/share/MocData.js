@@ -22,6 +22,10 @@ const AppMocData = {
     scanviewBackButton: require('@assets/images/icons/scanview_back_button.png'),
     scanviewCameraButton: require('@assets/images/icons/scanview_camera_button.png'),
     more: require('@assets/images/icons/ic_more.png'),
+    listItem: require('@assets/images/icons/ic_list.png'),
+    arrowRight: require('@assets/images/icons/ic_arrow_right.png'),
+    whiteBack: require('@assets/images/icons/ic_white_back.png'),
+    starActive: require('@assets/images/icons/ic_star_fill.png'),
   },
   dashBoard: {
     card1: require('@assets/images/dashBoard/card1.png'),
@@ -33,6 +37,9 @@ const AppMocData = {
   },
   camera: {
     scanviewBorder: require('@assets/images/camera/scanview_border.png')
+  },
+  doc: {
+    docTemp: require('@assets/images/doc/temp_doc.png')
   }
 };
 
